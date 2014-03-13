@@ -1,0 +1,23 @@
+{
+  "name": "failing-code",
+  "version": "0.0.0",
+  "description": "Returns failing code for given error",
+  "main": "index.js",
+  "keywords": [
+    "error",
+    "reporter"
+  ],
+  "repository": {
+    "url": "git@github.com:azer/failing-code.git",
+    "type": "git"
+  },
+  "author": "Azer Koçulu <azer@kodfabrik.com>",
+  "license": "BSD",
+  "devDependencies": {
+    "tape": "*"
+  },
+  "dependencies": {
+    "is-node": "0.0.0",
+    "failing-line": "0.0.0"
+  }
+}
