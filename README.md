@@ -28,10 +28,16 @@ process.on('uncaughtException', function (error) {
 
   failingCode(error)
   // => [
-  //        { line: 3, code: "var foo" },
-  //        { line: 4, col: 0, code: "here I fail++", fn: "Object.<anonymous>", filename: "a.js"  },
-  //        { line: 5, code: "var bar" }
-  //      ]
+  //      { line: 3, code: "var foo" },
+  //      {
+  //        line: 4,
+  //        col: 0,
+  //        code: "here I fail++",
+  //        fn: "Object.<anonymous>",
+  //        filename: "a.js"
+  //      },
+  //      { line: 5, code: "var bar" }
+  //   ]
 
 })
 ```
