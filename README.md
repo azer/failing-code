@@ -55,3 +55,11 @@ fs.readFile(ln.filename, function (error, buffer) {
 
 })
 ```
+
+If you'd like to skip some lines from the top of the stack trace, pass the number of the lines to skip as third parameter:
+
+```js
+failingCode(error, null, 1) // will get skip the first line of the stack
+```
+
+See `test.js` and [failing-line](http://github.com/azer/failing-line) for more info.
