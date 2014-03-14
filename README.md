@@ -1,6 +1,6 @@
 ## failing-code
 
-Returns failing code for given error
+Returns failing code for given error. It's based on [failing-line](http://github.com/azer/failing-line).
 
 ## Install
 
