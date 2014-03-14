@@ -21,7 +21,6 @@ var bar
 ```
 
 b.js:
-
 ```js
 var failingCode = require('failing-code')
 
@@ -29,10 +28,10 @@ process.on('uncaughtException', function (error) {
 
   failingCode(error)
   // => [
-          { lineno: 3, code: "var foo" },
-          { lineno: 4, code: "here I fail++" },
-          { lineno: 5, code: "var bar" }
-        ]
+  //        { line: 3, code: "var foo" },
+  //        { line: 4, col: 0, code: "here I fail++", fn: "Object.<anonymous>", filename: "a.js"  },
+  //        { line: 5, code: "var bar" }
+  //      ]
 
 })
 ```
