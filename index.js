@@ -12,8 +12,8 @@ if (isNode) {
 
 module.exports = failingCode;
 
-function failingCode (error, doc) {
-  var ln = failingLine(error);
+function failingCode (error, doc, shift) {
+  var ln = failingLine(error, shift);
 
   if (!doc && fs) {
     try {
@@ -26,9 +26,24 @@ function failingCode (error, doc) {
   var result = [];
   var lines = doc.split('\n');
 
-  var i = ln.lineno - 3;
-  while (++i < ln.lineno + 1) {
-    result.push({ lineno: ln.lineno - (ln.lineno - i - 1), code: lines[i], failed: i + 1 == ln.lineno });
+  var i = ln.line - 3;
+  while (++i < ln.line + 1) {
+    if (i + 1 != ln.line) {
+      result.push({
+        line: ln.line - (ln.line - i -1),
+        code: lines[i]
+      });
+      continue;
+    }
+
+    result.push({
+      line: ln.line,
+      col: ln.col,
+      fn: ln.fn,
+      filename: ln.filename,
+      code: lines[i],
+      failed: true
+    });
   }
 
   return result;
