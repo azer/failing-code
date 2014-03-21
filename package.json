@@ -1,6 +1,6 @@
 {
   "name": "failing-code",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Returns failing code for given error",
   "main": "index.js",
   "keywords": [
