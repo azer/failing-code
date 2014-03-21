@@ -15,6 +15,8 @@ module.exports = failingCode;
 function failingCode (error, doc, shift) {
   var ln = failingLine(error, shift);
 
+  if (!ln) return;
+
   if (!doc && fs) {
     try {
       doc = fs.readFileSync(ln.filename).toString();
